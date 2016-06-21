@@ -1,0 +1,56 @@
+import org.uddi.api_v3.*;
+import org.apache.juddi.api_v3.*;
+import org.apache.juddi.v3.client.config.UDDIClient;
+import org.apache.juddi.v3.client.transport.Transport;
+import org.uddi.v3_service.UDDISecurityPortType;
+import org.uddi.v3_service.UDDIPublicationPortType;
+import java.util.Scanner; 
+
+public class Consulta {
+
+    private static UDDISecurityPortType security = null;
+    private static UDDIPublicationPortType publish = null;
+
+    public Consulta () {
+            try {
+                    // Creo el cliente y leo el fichero de configuracion que me permite acceder al servidor juddi 
+                    // fichero resources/META-INF/uddiquery.xml
+            		UDDIClient uddiClient = new UDDIClient("resources/META-INF/uddiquery.xml");
+                    // En el fichero uddiquery.xml definimos los nodos UDDI en la variable nodename
+                    // Definimos tambien el transporte en el fichero uddiquery.xml
+                    Transport transport = uddiClient.getTransport("default");
+                    // Creamos una referenciaa la UDDI API
+                    security = transport.getUDDISecurityService();
+                    publish = transport.getUDDIPublishService();
+            } catch (Exception e) {
+                    e.printStackTrace();
+            }
+    }
+
+    public String publicar() {
+    		String endp2="";
+            try {
+					
+					String authtoken = null;
+                    System.out.println("Obtencion de los Endpoints de un servicio");
+					System.out.print("Introduzca el Service key del Servicio del cual queremos analizar los endpoints: ");
+					//String key2 = "";
+                    //key2 = System.console().readLine("Introduzca el Service key del Servicio del cual queremos analizar los endpoints: ");
+                    
+					// Usamos scanner en lugar de System.console porque las consolas en eclipse no funcionan bien
+                    Scanner scanner = new Scanner(System.in);
+                    String key2 = scanner.nextLine();
+                    scanner.close();
+                    
+                    //String key2="uddi:noticia:service_noticia";
+                    //String key2="uddi:globalweather-meteo1:service_globalweather";
+                    
+					endp2=new EncontrarEndpoints().Fire(authtoken, key2);
+					System.out.print("Endpoint del Service key: "+key2+" guardado en una variable: "+endp2+"\n");
+					
+            } catch (Exception e) {
+                    e.printStackTrace();
+            }
+            return endp2;
+    }
+}

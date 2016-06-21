@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://ws.apache.org/axis2" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ws.apache.org/axis2">
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="unqualified" targetNamespace="http://ws.apache.org/axis2">
+            <xs:element name="BorrarUser">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="id" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="BorrarUserResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="VerUsers">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="VerUsersResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:anyType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="AnadirUser">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="monedero" type="xs:int"/>
+                        <xs:element minOccurs="0" name="preferencias" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="AnadirUserResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="VerUsersRequest">
+        <wsdl:part name="parameters" element="ns:VerUsers"/>
+    </wsdl:message>
+    <wsdl:message name="VerUsersResponse">
+        <wsdl:part name="parameters" element="ns:VerUsersResponse"/>
+    </wsdl:message>
+    <wsdl:message name="BorrarUserRequest">
+        <wsdl:part name="parameters" element="ns:BorrarUser"/>
+    </wsdl:message>
+    <wsdl:message name="BorrarUserResponse">
+        <wsdl:part name="parameters" element="ns:BorrarUserResponse"/>
+    </wsdl:message>
+    <wsdl:message name="AnadirUserRequest">
+        <wsdl:part name="parameters" element="ns:AnadirUser"/>
+    </wsdl:message>
+    <wsdl:message name="AnadirUserResponse">
+        <wsdl:part name="parameters" element="ns:AnadirUserResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="ModificarUsersDBPortType">
+        <wsdl:operation name="VerUsers">
+            <wsdl:input message="ns:VerUsersRequest" wsaw:Action="urn:VerUsers"/>
+            <wsdl:output message="ns:VerUsersResponse" wsaw:Action="urn:VerUsersResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="BorrarUser">
+            <wsdl:input message="ns:BorrarUserRequest" wsaw:Action="urn:BorrarUser"/>
+            <wsdl:output message="ns:BorrarUserResponse" wsaw:Action="urn:BorrarUserResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="AnadirUser">
+            <wsdl:input message="ns:AnadirUserRequest" wsaw:Action="urn:AnadirUser"/>
+            <wsdl:output message="ns:AnadirUserResponse" wsaw:Action="urn:AnadirUserResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ModificarUsersDBSoap11Binding" type="ns:ModificarUsersDBPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="VerUsers">
+            <soap:operation soapAction="urn:VerUsers" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="BorrarUser">
+            <soap:operation soapAction="urn:BorrarUser" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AnadirUser">
+            <soap:operation soapAction="urn:AnadirUser" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="ModificarUsersDBSoap12Binding" type="ns:ModificarUsersDBPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="VerUsers">
+            <soap12:operation soapAction="urn:VerUsers" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="BorrarUser">
+            <soap12:operation soapAction="urn:BorrarUser" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AnadirUser">
+            <soap12:operation soapAction="urn:AnadirUser" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="ModificarUsersDBHttpBinding" type="ns:ModificarUsersDBPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="VerUsers">
+            <http:operation location="VerUsers"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="BorrarUser">
+            <http:operation location="BorrarUser"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AnadirUser">
+            <http:operation location="AnadirUser"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ModificarUsersDB">
+        <wsdl:port name="ModificarUsersDBHttpSoap11Endpoint" binding="ns:ModificarUsersDBSoap11Binding">
+            <soap:address location="http://25.127.63.104:8080/axis2/services/ModificarUsersDB.ModificarUsersDBHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="ModificarUsersDBHttpSoap12Endpoint" binding="ns:ModificarUsersDBSoap12Binding">
+            <soap12:address location="http://25.127.63.104:8080/axis2/services/ModificarUsersDB.ModificarUsersDBHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="ModificarUsersDBHttpEndpoint" binding="ns:ModificarUsersDBHttpBinding">
+            <http:address location="http://25.127.63.104:8080/axis2/services/ModificarUsersDB.ModificarUsersDBHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

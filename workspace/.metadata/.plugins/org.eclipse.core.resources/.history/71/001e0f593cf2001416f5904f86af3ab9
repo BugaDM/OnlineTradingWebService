@@ -1,0 +1,43 @@
+
+/**
+ * OrquestadorExceptionException.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
+ */
+
+package org.apache.ws.axis2;
+
+public class OrquestadorExceptionException extends java.lang.Exception{
+
+    private static final long serialVersionUID = 1430730043403L;
+    
+    private org.apache.ws.axis2.OrquestadorStub.OrquestadorException faultMessage;
+
+    
+        public OrquestadorExceptionException() {
+            super("OrquestadorExceptionException");
+        }
+
+        public OrquestadorExceptionException(java.lang.String s) {
+           super(s);
+        }
+
+        public OrquestadorExceptionException(java.lang.String s, java.lang.Throwable ex) {
+          super(s, ex);
+        }
+
+        public OrquestadorExceptionException(java.lang.Throwable cause) {
+            super(cause);
+        }
+    
+
+    public void setFaultMessage(org.apache.ws.axis2.OrquestadorStub.OrquestadorException msg){
+       faultMessage = msg;
+    }
+    
+    public org.apache.ws.axis2.OrquestadorStub.OrquestadorException getFaultMessage(){
+       return faultMessage;
+    }
+}
+    

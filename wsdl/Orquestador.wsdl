@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://ws.apache.org/axis2" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax21="http://rmi.java/xsd" xmlns:ax22="http://io.java/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ws.apache.org/axis2">
+    <wsdl:documentation>Orquestador</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax24="http://rmi.java/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.apache.org/axis2">
+            <xs:import namespace="http://rmi.java/xsd"/>
+            <xs:element name="OrquestadorException">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="OrquestadorException" nillable="true" type="ns:Exception"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="Exception">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="main">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="args" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="verUsers">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="verUsersResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="anadirUser">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="monedero" type="xs:int"/>
+                        <xs:element minOccurs="0" name="prefs" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="anadirUserResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="verStock">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="verStockResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="borrarUser">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="id" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="borrarUserResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="OrquestadorRemoteException">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="RemoteException" nillable="true" type="ax21:RemoteException"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="conversor">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="divisa1" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="divisa2" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="conversorResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="tuitear">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="anadirElemento">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="marca" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="modelo" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="precio" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="anadirElementoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="reestablecerUsers">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="reestablecerStock">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="borrarElemento">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="id" type="xs:int"/>
+                        <xs:element minOccurs="0" name="monedero" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="borrarElementoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns:ax23="http://io.java/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://rmi.java/xsd">
+            <xs:import namespace="http://io.java/xsd"/>
+            <xs:complexType name="RemoteException">
+                <xs:complexContent>
+                    <xs:extension base="ax22:IOException">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="cause" nillable="true" type="xs:anyType"/>
+                            <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://io.java/xsd">
+            <xs:complexType name="IOException">
+                <xs:sequence/>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="borrarElementoRequest">
+        <wsdl:part name="parameters" element="ns:borrarElemento"/>
+    </wsdl:message>
+    <wsdl:message name="borrarElementoResponse">
+        <wsdl:part name="parameters" element="ns:borrarElementoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrquestadorException">
+        <wsdl:part name="parameters" element="ns:OrquestadorException"/>
+    </wsdl:message>
+    <wsdl:message name="anadirUserRequest">
+        <wsdl:part name="parameters" element="ns:anadirUser"/>
+    </wsdl:message>
+    <wsdl:message name="anadirUserResponse">
+        <wsdl:part name="parameters" element="ns:anadirUserResponse"/>
+    </wsdl:message>
+    <wsdl:message name="verUsersRequest">
+        <wsdl:part name="parameters" element="ns:verUsers"/>
+    </wsdl:message>
+    <wsdl:message name="verUsersResponse">
+        <wsdl:part name="parameters" element="ns:verUsersResponse"/>
+    </wsdl:message>
+    <wsdl:message name="mainRequest">
+        <wsdl:part name="parameters" element="ns:main"/>
+    </wsdl:message>
+    <wsdl:message name="anadirElementoRequest">
+        <wsdl:part name="parameters" element="ns:anadirElemento"/>
+    </wsdl:message>
+    <wsdl:message name="anadirElementoResponse">
+        <wsdl:part name="parameters" element="ns:anadirElementoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="reestablecerStockRequest">
+        <wsdl:part name="parameters" element="ns:reestablecerStock"/>
+    </wsdl:message>
+    <wsdl:message name="tuitearRequest">
+        <wsdl:part name="parameters" element="ns:tuitear"/>
+    </wsdl:message>
+    <wsdl:message name="conversorRequest">
+        <wsdl:part name="parameters" element="ns:conversor"/>
+    </wsdl:message>
+    <wsdl:message name="conversorResponse">
+        <wsdl:part name="parameters" element="ns:conversorResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OrquestadorRemoteException">
+        <wsdl:part name="parameters" element="ns:OrquestadorRemoteException"/>
+    </wsdl:message>
+    <wsdl:message name="reestablecerUsersRequest">
+        <wsdl:part name="parameters" element="ns:reestablecerUsers"/>
+    </wsdl:message>
+    <wsdl:message name="borrarUserRequest">
+        <wsdl:part name="parameters" element="ns:borrarUser"/>
+    </wsdl:message>
+    <wsdl:message name="borrarUserResponse">
+        <wsdl:part name="parameters" element="ns:borrarUserResponse"/>
+    </wsdl:message>
+    <wsdl:message name="verStockRequest">
+        <wsdl:part name="parameters" element="ns:verStock"/>
+    </wsdl:message>
+    <wsdl:message name="verStockResponse">
+        <wsdl:part name="parameters" element="ns:verStockResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="OrquestadorPortType">
+        <wsdl:operation name="borrarElemento">
+            <wsdl:input message="ns:borrarElementoRequest" wsaw:Action="urn:borrarElemento"/>
+            <wsdl:output message="ns:borrarElementoResponse" wsaw:Action="urn:borrarElementoResponse"/>
+            <wsdl:fault message="ns:OrquestadorException" name="OrquestadorException" wsaw:Action="urn:borrarElementoOrquestadorException"/>
+        </wsdl:operation>
+        <wsdl:operation name="anadirUser">
+            <wsdl:input message="ns:anadirUserRequest" wsaw:Action="urn:anadirUser"/>
+            <wsdl:output message="ns:anadirUserResponse" wsaw:Action="urn:anadirUserResponse"/>
+            <wsdl:fault message="ns:OrquestadorException" name="OrquestadorException" wsaw:Action="urn:anadirUserOrquestadorException"/>
+        </wsdl:operation>
+        <wsdl:operation name="verUsers">
+            <wsdl:input message="ns:verUsersRequest" wsaw:Action="urn:verUsers"/>
+            <wsdl:output message="ns:verUsersResponse" wsaw:Action="urn:verUsersResponse"/>
+            <wsdl:fault message="ns:OrquestadorException" name="OrquestadorException" wsaw:Action="urn:verUsersOrquestadorException"/>
+        </wsdl:operation>
+        <wsdl:operation name="main">
+            <wsdl:input message="ns:mainRequest" wsaw:Action="urn:main"/>
+            <wsdl:output message="ns:null" wsaw:Action="urn:mainResponse"/>
+            <wsdl:fault message="ns:OrquestadorException" name="OrquestadorException" wsaw:Action="urn:mainOrquestadorException"/>
+        </wsdl:operation>
+        <wsdl:operation name="anadirElemento">
+            <wsdl:input message="ns:anadirElementoRequest" wsaw:Action="urn:anadirElemento"/>
+            <wsdl:output message="ns:anadirElementoResponse" wsaw:Action="urn:anadirElementoResponse"/>
+            <wsdl:fault message="ns:OrquestadorException" name="OrquestadorException" wsaw:Action="urn:anadirElementoOrquestadorException"/>
+        </wsdl:operation>
+        <wsdl:operation name="reestablecerStock">
+            <wsdl:input message="ns:reestablecerStockRequest" wsaw:Action="urn:reestablecerStock"/>
+            <wsdl:output message="ns:null" wsaw:Action="urn:reestablecerStockResponse"/>
+            <wsdl:fault message="ns:OrquestadorException" name="OrquestadorException" wsaw:Action="urn:reestablecerStockOrquestadorException"/>
+        </wsdl:operation>
+        <wsdl:operation name="tuitear">
+            <wsdl:input message="ns:tuitearRequest" wsaw:Action="urn:tuitear"/>
+            <wsdl:output message="ns:null" wsaw:Action="urn:tuitearResponse"/>
+            <wsdl:fault message="ns:OrquestadorException" name="OrquestadorException" wsaw:Action="urn:tuitearOrquestadorException"/>
+        </wsdl:operation>
+        <wsdl:operation name="conversor">
+            <wsdl:input message="ns:conversorRequest" wsaw:Action="urn:conversor"/>
+            <wsdl:output message="ns:conversorResponse" wsaw:Action="urn:conversorResponse"/>
+            <wsdl:fault message="ns:OrquestadorRemoteException" name="OrquestadorRemoteException" wsaw:Action="urn:conversorOrquestadorRemoteException"/>
+        </wsdl:operation>
+        <wsdl:operation name="reestablecerUsers">
+            <wsdl:input message="ns:reestablecerUsersRequest" wsaw:Action="urn:reestablecerUsers"/>
+            <wsdl:output message="ns:null" wsaw:Action="urn:reestablecerUsersResponse"/>
+            <wsdl:fault message="ns:OrquestadorException" name="OrquestadorException" wsaw:Action="urn:reestablecerUsersOrquestadorException"/>
+        </wsdl:operation>
+        <wsdl:operation name="borrarUser">
+            <wsdl:input message="ns:borrarUserRequest" wsaw:Action="urn:borrarUser"/>
+            <wsdl:output message="ns:borrarUserResponse" wsaw:Action="urn:borrarUserResponse"/>
+            <wsdl:fault message="ns:OrquestadorException" name="OrquestadorException" wsaw:Action="urn:borrarUserOrquestadorException"/>
+        </wsdl:operation>
+        <wsdl:operation name="verStock">
+            <wsdl:input message="ns:verStockRequest" wsaw:Action="urn:verStock"/>
+            <wsdl:output message="ns:verStockResponse" wsaw:Action="urn:verStockResponse"/>
+            <wsdl:fault message="ns:OrquestadorException" name="OrquestadorException" wsaw:Action="urn:verStockOrquestadorException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="OrquestadorSoap11Binding" type="ns:OrquestadorPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="borrarElemento">
+            <soap:operation soapAction="urn:borrarElemento" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="verUsers">
+            <soap:operation soapAction="urn:verUsers" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="anadirUser">
+            <soap:operation soapAction="urn:anadirUser" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="main">
+            <soap:operation soapAction="urn:main" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="anadirElemento">
+            <soap:operation soapAction="urn:anadirElemento" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="reestablecerStock">
+            <soap:operation soapAction="urn:reestablecerStock" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="conversor">
+            <soap:operation soapAction="urn:conversor" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorRemoteException">
+                <soap:fault use="literal" name="OrquestadorRemoteException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="tuitear">
+            <soap:operation soapAction="urn:tuitear" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="reestablecerUsers">
+            <soap:operation soapAction="urn:reestablecerUsers" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="borrarUser">
+            <soap:operation soapAction="urn:borrarUser" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="verStock">
+            <soap:operation soapAction="urn:verStock" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="OrquestadorSoap12Binding" type="ns:OrquestadorPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="borrarElemento">
+            <soap12:operation soapAction="urn:borrarElemento" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap12:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="verUsers">
+            <soap12:operation soapAction="urn:verUsers" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap12:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="anadirUser">
+            <soap12:operation soapAction="urn:anadirUser" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap12:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="main">
+            <soap12:operation soapAction="urn:main" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap12:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="anadirElemento">
+            <soap12:operation soapAction="urn:anadirElemento" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap12:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="reestablecerStock">
+            <soap12:operation soapAction="urn:reestablecerStock" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap12:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="conversor">
+            <soap12:operation soapAction="urn:conversor" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorRemoteException">
+                <soap12:fault use="literal" name="OrquestadorRemoteException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="tuitear">
+            <soap12:operation soapAction="urn:tuitear" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap12:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="reestablecerUsers">
+            <soap12:operation soapAction="urn:reestablecerUsers" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap12:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="borrarUser">
+            <soap12:operation soapAction="urn:borrarUser" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap12:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="verStock">
+            <soap12:operation soapAction="urn:verStock" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="OrquestadorException">
+                <soap12:fault use="literal" name="OrquestadorException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="OrquestadorHttpBinding" type="ns:OrquestadorPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="borrarElemento">
+            <http:operation location="borrarElemento"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="verUsers">
+            <http:operation location="verUsers"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="anadirUser">
+            <http:operation location="anadirUser"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="main">
+            <http:operation location="main"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="anadirElemento">
+            <http:operation location="anadirElemento"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="reestablecerStock">
+            <http:operation location="reestablecerStock"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="conversor">
+            <http:operation location="conversor"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="tuitear">
+            <http:operation location="tuitear"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="reestablecerUsers">
+            <http:operation location="reestablecerUsers"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="borrarUser">
+            <http:operation location="borrarUser"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="verStock">
+            <http:operation location="verStock"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="Orquestador">
+        <wsdl:port name="OrquestadorHttpSoap11Endpoint" binding="ns:OrquestadorSoap11Binding">
+            <soap:address location="http://25.83.75.28:8080/axis2/services/Orquestador.OrquestadorHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="OrquestadorHttpSoap12Endpoint" binding="ns:OrquestadorSoap12Binding">
+            <soap12:address location="http://25.83.75.28:8080/axis2/services/Orquestador.OrquestadorHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="OrquestadorHttpEndpoint" binding="ns:OrquestadorHttpBinding">
+            <http:address location="http://25.83.75.28:8080/axis2/services/Orquestador.OrquestadorHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

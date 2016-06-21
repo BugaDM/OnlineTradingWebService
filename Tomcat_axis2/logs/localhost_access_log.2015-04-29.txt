@@ -1,0 +1,9 @@
+0:0:0:0:0:0:0:1 - - [29/Apr/2015:09:54:09 +0200] "GET /axis2 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [29/Apr/2015:09:54:09 +0200] "GET /axis2/ HTTP/1.1" 200 3471
+0:0:0:0:0:0:0:1 - - [29/Apr/2015:09:54:09 +0200] "GET /axis2/axis2-web/css/axis-style.css HTTP/1.1" 200 1587
+0:0:0:0:0:0:0:1 - - [29/Apr/2015:09:54:09 +0200] "GET /axis2/axis2-web/images/asf-logo.gif HTTP/1.1" 200 5866
+0:0:0:0:0:0:0:1 - - [29/Apr/2015:09:54:10 +0200] "GET /axis2/axis2-web/images/axis_l.jpg HTTP/1.1" 200 12340
+0:0:0:0:0:0:0:1 - - [29/Apr/2015:09:54:10 +0200] "GET /favicon.ico HTTP/1.1" 200 21630
+0:0:0:0:0:0:0:1 - - [29/Apr/2015:09:54:12 +0200] "GET /axis2/services/listServices HTTP/1.1" 200 5438
+0:0:0:0:0:0:0:1 - - [29/Apr/2015:09:54:23 +0200] "GET /axis2/services/ModificarStockDB?wsdl HTTP/1.1" 200 12186
+0:0:0:0:0:0:0:1 - - [29/Apr/2015:09:55:07 +0200] "GET /axis2/services/ModificarStockDB.ModificarStockDBHttpEndpoint HTTP/1.1" 500 374

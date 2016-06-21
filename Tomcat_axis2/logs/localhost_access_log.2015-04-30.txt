@@ -1,0 +1,17 @@
+0:0:0:0:0:0:0:1 - - [30/Apr/2015:10:15:04 +0200] "GET /axis2/services/listServices HTTP/1.1" 200 4614
+0:0:0:0:0:0:0:1 - - [30/Apr/2015:10:15:21 +0200] "GET /axis2/services/ReestablecerStockDB?wsdl HTTP/1.1" 200 5209
+0:0:0:0:0:0:0:1 - - [30/Apr/2015:10:15:30 +0200] "GET /axis2/services/ReestablecerStockDB HTTP/1.1" 500 171
+0:0:0:0:0:0:0:1 - - [30/Apr/2015:10:15:50 +0200] "GET /axis2/services/ReestablecerStockDB?wsdl HTTP/1.1" 200 5209
+0:0:0:0:0:0:0:1 - - [30/Apr/2015:10:16:26 +0200] "GET /axis2/services/ReestablecerStockDB.ReestablecerStockDBHttpSoap12Endpoint HTTP/1.1" 500 171
+0:0:0:0:0:0:0:1 - - [30/Apr/2015:10:26:57 +0200] "GET /axis2/services/ReestablecerStockDB.ReestablecerStockDBHttpSoap12Endpoint HTTP/1.1" 500 171
+0:0:0:0:0:0:0:1 - - [30/Apr/2015:10:27:00 +0200] "GET /axis2/services/ReestablecerStockDB?wsdl HTTP/1.1" 200 5209
+0:0:0:0:0:0:0:1 - - [30/Apr/2015:10:27:16 +0200] "GET /axis2/services/Orquestador?wsdl HTTP/1.1" 200 32235
+0:0:0:0:0:0:0:1 - - [30/Apr/2015:10:27:28 +0200] "GET /axis2/services/Orquestador.OrquestadorHttpSoap12Endpoint HTTP/1.1" 500 370
+0:0:0:0:0:0:0:1 - - [30/Apr/2015:10:28:03 +0200] "GET /axis2/services/listServices HTTP/1.1" 200 5303
+0:0:0:0:0:0:0:1 - - [30/Apr/2015:10:28:04 +0200] "GET /axis2/axis2-web/images/asf-logo.gif HTTP/1.1" 200 5866
+0:0:0:0:0:0:0:1 - - [30/Apr/2015:10:28:04 +0200] "GET /axis2/axis2-web/css/axis-style.css HTTP/1.1" 200 1587
+0:0:0:0:0:0:0:1 - - [30/Apr/2015:10:28:04 +0200] "GET /axis2/axis2-web/images/axis_l.jpg HTTP/1.1" 200 12340
+0:0:0:0:0:0:0:1 - - [30/Apr/2015:10:28:10 +0200] "GET /axis2/services/ModificarStockDB?wsdl HTTP/1.1" 200 10959
+0:0:0:0:0:0:0:1 - - [30/Apr/2015:10:28:27 +0200] "GET /axis2/services/ModificarStockDB.ModificarStockDBHttpSoap12Endpoint HTTP/1.1" 500 380
+0:0:0:0:0:0:0:1 - - [30/Apr/2015:10:28:42 +0200] "GET /axis2/services/ReestablecerStockDB?wsdl HTTP/1.1" 200 5209
+0:0:0:0:0:0:0:1 - - [30/Apr/2015:10:28:53 +0200] "GET /axis2/services/ReestablecerStockDB.ReestablecerStockDBHttpSoap12Endpoint HTTP/1.1" 500 171

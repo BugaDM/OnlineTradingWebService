@@ -1,0 +1,80 @@
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server version:        Apache Tomcat/7.0.59
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server built:          Jan 28 2015 15:51:10 UTC
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server number:         7.0.59.0
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Name:               Windows 7
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Version:            6.1
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Architecture:          amd64
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Java Home:             C:\Program Files\Java\jre7
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Version:           1.7.0_75-b13
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Vendor:            Oracle Corporation
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_BASE:         C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_HOME:         C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.config.file=C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2\conf\logging.properties
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.endorsed.dirs=C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2\endorsed
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.base=C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.home=C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.io.tmpdir=C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2\temp
+abr 29, 2015 9:53:12 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: C:\Program Files\Java\jre7\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\Isabel\Desktop\apache-ant-1.9.4\bin; C:\Program Files\Java\jdk1.7.0_75\bin;.
+abr 29, 2015 9:53:12 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["http-bio-8080"]
+abr 29, 2015 9:53:12 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["ajp-bio-8009"]
+abr 29, 2015 9:53:12 AM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 2256 ms
+abr 29, 2015 9:53:13 AM org.apache.catalina.core.StandardService startInternal
+INFORMACIÓN: Arrancando servicio Catalina
+abr 29, 2015 9:53:13 AM org.apache.catalina.core.StandardEngine startInternal
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/7.0.59
+abr 29, 2015 9:53:13 AM org.apache.catalina.startup.HostConfig deployWAR
+INFORMACIÓN: Despliegue del archivo C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2\webapps\axis2.war de la aplicación web
+abr 29, 2015 9:53:24 AM org.apache.catalina.util.SessionIdGeneratorBase createSecureRandom
+INFORMACIÓN: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [117] milliseconds.
+abr 29, 2015 9:53:27 AM org.apache.catalina.startup.HostConfig deployWAR
+INFORMACIÓN: Deployment of web application archive C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2\webapps\axis2.war has finished in 13.958 ms
+abr 29, 2015 9:53:27 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2\webapps\docs de la aplicación web
+abr 29, 2015 9:53:27 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2\webapps\docs has finished in 706 ms
+abr 29, 2015 9:53:27 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2\webapps\examples de la aplicación web
+abr 29, 2015 9:53:29 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2\webapps\examples has finished in 1.907 ms
+abr 29, 2015 9:53:29 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2\webapps\host-manager de la aplicación web
+abr 29, 2015 9:53:30 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2\webapps\host-manager has finished in 299 ms
+abr 29, 2015 9:53:30 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2\webapps\manager de la aplicación web
+abr 29, 2015 9:53:30 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2\webapps\manager has finished in 334 ms
+abr 29, 2015 9:53:30 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2\webapps\ROOT de la aplicación web
+abr 29, 2015 9:53:30 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\ASTP\Tomcat_axis2\webapps\ROOT has finished in 290 ms
+abr 29, 2015 9:53:30 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["http-bio-8080"]
+abr 29, 2015 9:53:30 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["ajp-bio-8009"]
+abr 29, 2015 9:53:30 AM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 17872 ms
+abr 29, 2015 9:55:22 AM org.apache.coyote.AbstractProtocol pause
+INFORMACIÓN: Pausing ProtocolHandler ["http-bio-8080"]

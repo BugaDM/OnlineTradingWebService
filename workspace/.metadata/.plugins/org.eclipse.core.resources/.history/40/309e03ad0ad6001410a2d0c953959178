@@ -1,0 +1,56 @@
+package orquestador;
+
+import java.util.Scanner;
+
+public class Cliente {
+	public void main(String[] args){
+		System.out.println("\n****BIENVENIDO AL CLIENTE DE TRACTORES BERRIO****");
+		int opt=0;
+		while(opt!=3){
+			System.out.println("Seleccione su tipo de usuario:");
+			System.out.println("\t1. Debugger");
+			System.out.println("\t2. Usuario");
+			System.out.println("\t3. Salir del Cliente");
+		
+			Scanner sc = new Scanner(System.in);
+			opt=Integer.parseInt(sc.next());
+			
+			if(opt==1) RamaDebugger();
+			else if(opt==2) RamaUser();
+			else if(opt==3) continue;
+			else System.out.println("Introduzca una opcion valida");
+		
+		}
+		
+		System.out.println("****SALIENDO DEL CLIENTE****\n");
+		return;
+	}
+	
+	public void RamaDebugger(){
+		System.out.println("-Ha seleccionado Debugger");
+		int opt=0;
+		Scanner sc= new Scanner(System.in);
+		while(opt!=12){
+			System.out.println("Seleccione una funcion para probar");
+			System.out.println("\t1. Login con Twitter");
+			System.out.println("\t2. Notificacion a traves de Twitter");
+			System.out.println("\t3. Cambio de divisas");
+			System.out.println("\t4. Reestablecer BD usuarios");
+			System.out.println("\t5. Reestablecer BD stock");
+			System.out.println("\t6. Ver usuarios");
+			System.out.println("\t7. Ver stock");
+			System.out.println("\t8. Añadir usuario");
+			System.out.println("\t9. Borrar usuario");
+			System.out.println("\t10. Añadir elemento");
+			System.out.println("\t11. Borrar elemento");
+			
+			opt=Integer.parseInt(sc.next());
+			
+			
+		}
+	}
+	
+	public void RamaUser(){
+		
+	}
+}

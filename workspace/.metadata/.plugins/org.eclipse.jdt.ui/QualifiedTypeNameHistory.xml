@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="CurrencyConvertorStub.Currency"/>
+<fullyQualifiedTypeName name="org.apache.log4j.chainsaw.Main"/>
+<fullyQualifiedTypeName name="ModificarUsersDBStub.VerUsers"/>
+<fullyQualifiedTypeName name="CurrencyConvertorStub.ConversionRateResponse"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="TweetAppStub.SetStatus"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.ResultSetMetaData"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.CallableStatement"/>
+<fullyQualifiedTypeName name="java.sql.CallableStatement"/>
+<fullyQualifiedTypeName name="org.apache.commons.lang.exception.NestableException"/>
+<fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+</qualifiedTypeNameHistroy>

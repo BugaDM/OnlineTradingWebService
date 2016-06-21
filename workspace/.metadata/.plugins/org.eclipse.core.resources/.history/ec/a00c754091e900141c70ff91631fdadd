@@ -1,0 +1,58 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Cliente {
+
+	public static void main(String[] args) throws ClassNotFoundException {
+		
+		System.out.println("*********Cliente De Prueba*********");
+		System.out.println(">Seleccione una prueba:");
+		System.out.println("\t1.  Consultar los espectáculos disponibles por parte del usuario");
+		System.out.println("\t2.  Consultar los espectaculos en lso que se permite la entrada a bebes por parte del usuario");
+		System.out.println("\t3.  Consultar la lista participanes de un espectáculo por parte del usuario");
+		System.out.println("\t4.  Consultar los eventos de un espectaculo por parte del usuario");
+		System.out.println("\t5.  Consultar toda la lista de espectaculos por parte del usuario");
+		System.out.println("\t6.  Consultar las gradas de un evento por parte del usuario");
+		System.out.println("\t7.  Consultar los precios de una grada por parte del usuario");
+		System.out.println("\t8.  Consultar los eventos de un espectaculo por parte del usuario");
+		System.out.println("\t9.  El usuario se registra en el sistema");
+		System.out.println("\t10. El usuario inicia sesion en el sistema");
+		System.out.println("\t11. El usuario prereserva una localidad");
+		System.out.println("\t12. El usuario anula una localidad");
+		System.out.println("\t13. El usuario consulta sus compras");
+		System.out.println("\t14. El usuario consulta una tabla vacia");
+		System.out.println("\t15. El usuario realiza una consulta cuyo resultado da un elemento vacio");
+		System.out.println("\t16. El tiempo de pre-reserva expira");
+		System.out.println("\t17. Se anula una reserva pasado el tiempo de penalizacion");
+		System.out.println("\t18. Acaba un evento");
+		Connection conexion = null;
+
+		// Seleccionamos la Base de Datos
+		String url = "jdbc:mysql://localhost/";
+		try {
+			// Comprobamos que tenemos la libreria
+			Class.forName("com.mysql.jdbc.Driver");
+
+			// Establecemos la conexion(ruta,user,pass)
+			conexion = DriverManager.getConnection(url, "cliente", "cliente");
+			
+			// Instanciamos la clase para ejecutar las sentencias
+			Statement s = conexion.createStatement();
+
+		} catch (SQLException e) {
+			System.err.print("Error: No existe o no se pudo gestionar la BD");
+			e.printStackTrace();
+		} finally {
+			try {
+				// Cerramos la conexion
+				conexion.close();
+			} catch (SQLException e) {
+				System.err.print("Error: No se pudo cerrar la conexion");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}

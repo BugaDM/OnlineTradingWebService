@@ -1,0 +1,171 @@
+package orquestador;
+
+import java.util.List;
+import java.util.Scanner;
+
+import org.apache.axis2.AxisFault;
+
+import orquestador.OrquestadorStub.*;
+
+import java.lang.Exception;
+public class Cliente {
+	public void main(String[] args) throws Exception{
+		System.out.println("\n****BIENVENIDO AL CLIENTE DE TRACTORES BERRIO****");
+		int opt=0;
+		while(opt!=3){
+			System.out.println("Seleccione su tipo de usuario:");
+			System.out.println("\t1. Debugger");
+			System.out.println("\t2. Usuario");
+			System.out.println("\t3. Salir del Cliente");
+		
+			Scanner sc = new Scanner(System.in);
+			opt=Integer.parseInt(sc.next());
+			
+			if(opt==1) RamaDebugger();
+			else if(opt==2) RamaUser();
+			else if(opt==3) continue;
+			else System.out.println("Introduzca una opcion valida");
+		
+		}
+		
+		System.out.println("****SALIENDO DEL CLIENTE****\n");
+		return;
+	}
+	
+	public void RamaDebugger() throws Exception{
+		
+		OrquestadorStub orquestador = new OrquestadorStub();
+		
+		System.out.println("-Ha seleccionado Debugger");
+		
+		int opt=0;
+		Scanner sc= new Scanner(System.in);
+		
+		while(opt!=12){
+			System.out.println("Seleccione una funcion para probar");
+			System.out.println("\t1. Login con Twitter");
+			System.out.println("\t2. Notificacion a traves de Twitter");
+			System.out.println("\t3. Cambio de divisas");
+			System.out.println("\t4. Reestablecer BD usuarios");
+			System.out.println("\t5. Reestablecer BD stock");
+			System.out.println("\t6. Ver usuarios");
+			System.out.println("\t7. Ver stock");
+			System.out.println("\t8. Añadir usuario");
+			System.out.println("\t9. Borrar usuario");
+			System.out.println("\t10. Añadir elemento");
+			System.out.println("\t11. Borrar elemento");
+			System.out.println("\t12. Salir");
+			
+			opt=Integer.parseInt(sc.next());
+			
+			switch(opt){
+			case 1:
+				break;
+				
+			case 2:
+				break;
+				
+			case 3:
+				Conversor conversor = new Conversor();
+				System.out.println("Introduzca la primera divisa:");
+				String div1=sc.next();
+				System.out.println("Introduzca la segunda divisa:");
+				String div2=sc.next();
+				conversor.setDivisa1(div1);
+				conversor.setDivisa2(div2);
+				ConversorResponse response = orquestador.conversor(conversor);
+				System.out.println("El cambio entre "+div1+" y "+div2+" es "+response.get_return());
+				break;
+				
+			case 4: 
+				ReestablecerUsers ru = new ReestablecerUsers();
+				orquestador.reestablecerUsers(ru);
+				System.out.println("BD de usuarios reestablecida");
+				break;
+				
+			case 5:
+				ReestablecerStock rs = new ReestablecerStock();
+				orquestador.reestablecerStock(rs);
+				System.out.println("BD de stock reestablecida");
+				break;
+				
+			case 6:
+				VerUsers vu = new VerUsers();
+				VerUsersResponse responseVU = orquestador.verUsers(vu);
+				List lista = (List) responseVU.get_return();
+				for(int i=0 ; i<lista.size() ; i++){
+					String[] usuario = (String[]) lista.get(i);
+					System.out.println("[ID: "+(String) usuario[0]+" Nombre: "+(String) usuario[1]+" | Preferencia: "+(String) usuario[2]+" | Monedero: "+(String) usuario[3]);
+				}
+				break;
+				
+			case 7:
+				VerStock vs = new VerStock();
+				VerStockResponse responseVS = orquestador.verStock(vs);
+				List lista2 = (List) responseVS.get_return();
+				for(int i=0 ; i<lista2.size() ; i++){
+					String[] elemento = (String[]) lista2.get(i);
+					System.out.println("[ID: "+(String) elemento[0]+" Marca: "+(String) elemento[1]+" | Modelo: "+(String) elemento[2]+" | Precio: "+(String) elemento[3]);
+				}
+				break;
+				
+			case 8:
+				AnadirUser au = new AnadirUser();
+				
+				System.out.println("Introduzca el ID");
+				int id = Integer.parseInt(sc.next());
+				System.out.println("Introduzca el nombre");
+				String nombre = sc.next();
+				System.out.println("Introduzca los moneda de preferencia (0->EUR, 1->USD)");
+				int prefs = Integer.parseInt(sc.next());
+				System.out.println("Introduzca el monedero");
+				int monedero =Integer.parseInt(sc.next());
+				
+				au.setId(id);
+				au.setNombre(nombre);
+				au.setMonedero(monedero);
+				au.setPrefs(prefs);
+				
+				AnadirUserResponse responseAU =orquestador.anadirUser(au);
+				System.out.println("La operacion a devuelto: "+responseAU.get_return());
+				break;
+				
+			case 9:
+				break;
+				
+			case 10:
+				AnadirElemento ae = new AnadirElemento();
+				
+				System.out.println("Introduzca el ID");
+				int id2 = Integer.parseInt(sc.next());
+				System.out.println("Introduzca la marca");
+				String marca = sc.next();
+				System.out.println("Introduzca el modelo");
+				String modelo = sc.next();
+				System.out.println("Introduzca el precio");
+				int precio =Integer.parseInt(sc.next());
+				
+				ae.setId(id2);
+				ae.setMarca(marca);
+				ae.setModelo(modelo);
+				ae.setPrecio(precio);
+				
+				AnadirElementoResponse responseAE =orquestador.anadirElemento(ae);
+				System.out.println("La operacion a devuelto: "+responseAE.get_return());
+				break;
+				
+			case 11:
+				break;
+				
+			case 12:
+				continue;
+			}
+		}
+		
+		System.out.println("-Saliendo de la rama Debugger");
+	}
+	
+	public void RamaUser(){
+		
+	}
+}

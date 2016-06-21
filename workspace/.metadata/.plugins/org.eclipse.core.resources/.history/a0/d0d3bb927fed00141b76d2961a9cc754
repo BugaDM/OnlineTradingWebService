@@ -1,0 +1,50 @@
+import java.util.List;
+import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.lang.exception.NestableException;
+import org.apache.juddi.v3.client.config.UDDIClerk;
+import org.apache.juddi.v3.client.config.UDDIClient;
+import org.apache.juddi.v3.client.transport.Transport;
+import org.uddi.v3_service.UDDIInquiryPortType;
+import org.uddi.v3_service.UDDISecurityPortType;
+
+public class EncontrarEndpoints {
+
+	private static UDDISecurityPortType security = null;
+	private static UDDIInquiryPortType inquiry = null;
+	static UDDIClerk clerk = null;
+
+	public EncontrarEndpoints() throws NestableException{
+		try {
+			
+			// Creamos un manager y leemos el fichero de configuracion
+			UDDIClient clerkManager = new UDDIClient("resources/META-INF/simple-publish-uddi.xml");
+			clerk = clerkManager.getClerk("default");
+			
+			Transport transport = clerkManager.getTransport();
+			
+			security = transport.getUDDISecurityService();
+			inquiry = transport.getUDDIInquiryService();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public String Fire(String authtoken, String key) {
+		String endpoint = null;
+		try {
+			if (key == null) {
+				// TODO cambiar key
+				key = "uddi:clave:service_orquestador";
+			}
+
+			List<String> endpoints = clerk.getEndpoints(key);
+			for (int i = 0; i < endpoints.size(); i++) {
+				System.out.println("Endpoint " + i + ": " + endpoints.get(i));
+				endpoint = endpoints.get(i);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return endpoint;
+	}
+}

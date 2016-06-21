@@ -1,0 +1,223 @@
+import java.rmi.RemoteException;
+import java.util.List;
+import java.util.Scanner;
+
+import org.apache.axis2.AxisFault;
+import org.apache.log4j.Logger;
+
+public class Orquestador {
+	public static void main(String[] args) throws Exception {
+		int opt = 0;
+		Scanner sc = new Scanner(System.in);
+		Scanner s = new Scanner(System.in);
+
+		while (true) {
+			System.out.println("1. Conversor");
+			System.out.println("2. Reestablecer Stock");
+			System.out.println("3. Reestablecer Users");
+			System.out.println("4. Ver Users");
+			System.out.println("5. Ver Stock");
+			System.out.println("6. Añadir User");
+			System.out.println("7. Borrar User");
+			System.out.println("8. Añadir Elemento");
+			System.out.println("9. Borrar Elemento");
+			System.out.println("10. Tuitear");
+			opt = Integer.parseInt(sc.next());
+
+			switch (opt) {
+			case 1:
+				System.out.println("Introduzca divisa1");
+				String divisa1=sc.next();
+				System.out.println("Introduzca divisa2");
+				String divisa2=sc.next();
+				System.out.println(conversor(divisa1,divisa2));;
+				break;
+				
+			case 2:
+				reestablecerStock();
+				break;
+				
+			case 3:
+				reestablecerUsers();
+				break;
+				
+			case 4:
+				String[] lista=verUsers();
+				for(int i=0 ; i<lista.length ; i++){
+					System.out.println(lista[i]);
+				}
+				break;
+				
+			case 5:
+				String[] lista2=verStock();
+				for(int i=0 ; i<lista2.length ; i++){
+						System.out.println(lista2[i]);
+				}
+				
+				break;
+				
+			case 6:
+				System.out.println("Introduzca nombre");
+				String nombre=sc.next();
+				System.out.println("Introduzca monedero");
+				int monedero=Integer.parseInt(sc.next());
+				System.out.println("Introduzca preferencia");
+				int prefs=Integer.parseInt(sc.next());
+				anadirUser(nombre, monedero, prefs);
+				break;
+				
+			case 7:
+				System.out.println("Introduzca id");
+				int id1 = Integer.parseInt(sc.next());
+				borrarUser(id1);
+				break;
+				
+			case 8:
+				
+				System.out.println("Introduzca marca");
+				String marca=s.nextLine();
+				System.out.println("Introduzca modelo");
+				String modelo=s.nextLine();
+				System.out.println("Introduzca precio");
+				int precio=Integer.parseInt(sc.next());
+				System.out.println("La operacion ha devuelto: "+ anadirElemento(marca,modelo,precio));
+				break;
+				
+			case 9:
+				System.out.println("Introduzca id");
+				int id2 = Integer.parseInt(sc.next());
+				System.out.println("Introduzca monedero");
+				int monedero2 = Integer.parseInt(sc.next());
+				borrarElemento(id2,monedero2);
+				break;
+				
+			case 10:
+				System.out.println("Introduzca mensaje");
+				String mensaje = s.nextLine();
+				tuitear(mensaje);
+				break;
+				
+			default:
+				System.exit(0);
+			}
+		}
+	}
+	
+	public static double conversor(String divisa1, String divisa2)
+			throws RemoteException {
+		CurrencyConvertorStub.Currency div1 = new CurrencyConvertorStub.Currency(
+				divisa1, true);
+		CurrencyConvertorStub.Currency div2 = new CurrencyConvertorStub.Currency(
+				divisa2, true);
+
+		CurrencyConvertorStub conversorStub = new CurrencyConvertorStub(
+				"http://www.webservicex.net/currencyconvertor.asmx");
+		CurrencyConvertorStub.ConversionRate cr = new CurrencyConvertorStub.ConversionRate();
+		cr.setFromCurrency(div1);
+		cr.setToCurrency(div2);
+
+		CurrencyConvertorStub.ConversionRateResponse response = conversorStub
+				.conversionRate(cr);
+		double relacion = response.getConversionRateResult();
+		return relacion;
+	}
+
+	public static void reestablecerStock() throws Exception {
+		ReestablecerStockDBStub reestablecerStub = new ReestablecerStockDBStub(
+				"http://25.81.235.142:8080/axis2/services/ReestablecerStockDB");
+		ReestablecerStockDBStub.Main main = new ReestablecerStockDBStub.Main();
+		reestablecerStub.main(main);
+		return;
+	}
+
+	public static void reestablecerUsers() throws Exception {
+		ReestablecerUsersDBStub reestablecerStub = new ReestablecerUsersDBStub(
+				"http://25.127.63.104:8080/axis2/services/ReestablecerUsersDB");
+		ReestablecerUsersDBStub.Main main = new ReestablecerUsersDBStub.Main();
+		reestablecerStub.main(main);
+		return;
+	}
+
+	public static String[] verUsers() throws Exception {
+		ModificarUsersDBStub modificarStub = new ModificarUsersDBStub(
+				"http://25.127.63.104:8080/axis2/services/ModificarUsersDB");
+		ModificarUsersDBStub.VerUsers verusers = new ModificarUsersDBStub.VerUsers();
+		ModificarUsersDBStub.VerUsersResponse response = modificarStub
+				.verUsers(verusers);
+		String[] lista =  response.get_return();
+		return lista;
+
+	}
+
+	public static String[] verStock() throws Exception {
+		ModificarStockDBStub modificarStub = new ModificarStockDBStub();
+		ModificarStockDBStub.VerElementos verelementos = new ModificarStockDBStub.VerElementos();
+		ModificarStockDBStub.VerElementosResponse response = modificarStub
+				.verElementos(verelementos);
+		String[] lista =  response.get_return();
+		return lista;
+	}
+
+	public static boolean anadirUser( String nombre, int monedero,
+			int prefs) throws Exception {
+		ModificarUsersDBStub modificarStub = new ModificarUsersDBStub(
+				"http://25.127.63.104:8080/axis2/services/ModificarUsersDB");
+		ModificarUsersDBStub.AnadirUser user = new ModificarUsersDBStub.AnadirUser();
+		user.setMonedero(monedero);
+		user.setNombre(nombre);
+		user.setPreferencias(prefs);
+
+		ModificarUsersDBStub.AnadirUserResponse response = modificarStub
+				.anadirUser(user);
+		return response.get_return();
+	}
+
+	public static boolean borrarUser(int id) throws Exception {
+		ModificarUsersDBStub modificarStub = new ModificarUsersDBStub(
+				"http://25.127.63.104:8080/axis2/services/ModificarUsersDB");
+		ModificarUsersDBStub.BorrarUser user = new ModificarUsersDBStub.BorrarUser();
+		user.setId(id);
+
+		ModificarUsersDBStub.BorrarUserResponse response = modificarStub
+				.borrarUser(user);
+		return response.get_return();
+
+	}
+
+	public static boolean anadirElemento( String marca, String modelo,
+			int precio) throws Exception {
+		ModificarStockDBStub modificarStub = new ModificarStockDBStub(
+				"http://25.81.235.142:8080/axis2/services/ModificarStockDB");
+		         
+		ModificarStockDBStub.AnadirElemento elemento = new ModificarStockDBStub.AnadirElemento();
+		elemento.setMarca(marca);
+		elemento.setModelo(modelo);
+		elemento.setPrecio(precio);
+
+		ModificarStockDBStub.AnadirElementoResponse response = modificarStub
+				.anadirElemento(elemento);
+		return response.get_return();
+	}
+
+	public static boolean borrarElemento(int id, int monedero) throws Exception {
+		ModificarStockDBStub modificarStub = new ModificarStockDBStub(
+				"http://25.81.235.142:8080/axis2/services/ModificarStockDB");
+		ModificarStockDBStub.BorrarElemento elemento = new ModificarStockDBStub.BorrarElemento();
+		elemento.setId_elemento(id);
+		elemento.setMonedero(monedero);
+
+		ModificarStockDBStub.BorrarElementoResponse response = modificarStub
+				.borrarElemento(elemento);
+		return response.get_return();
+	}
+	
+	public static void tuitear(String mensaje) throws Exception{
+		TweetAppStub tweetStub = new TweetAppStub("http://25.81.235.142:8080/axis2/services/TweetApp");
+		TweetAppStub.SetStatus tweet = new TweetAppStub.SetStatus();
+		TweetAppCallbackHandler callback = null;
+		tweet.setMessage(mensaje);
+		
+		tweetStub.startsetStatus(tweet, callback);
+	}
+
+}

@@ -1,0 +1,4 @@
+127.0.0.1 - - [09/Mar/2015:19:55:44 +0100] "POST /axis2/services/Resta.RestaHttpSoap11Endpoint/ HTTP/1.1" 200 452
+127.0.0.1 - - [09/Mar/2015:19:56:28 +0100] "POST /axis2/services/Suma.SumaHttpSoap11Endpoint/ HTTP/1.1" 200 449
+127.0.0.1 - - [09/Mar/2015:23:20:39 +0100] "POST /axis2/services/Suma.SumaHttpSoap11Endpoint/ HTTP/1.1" 200 449
+127.0.0.1 - - [09/Mar/2015:23:22:21 +0100] "POST /axis2/services/Resta.RestaHttpSoap11Endpoint/ HTTP/1.1" 200 452

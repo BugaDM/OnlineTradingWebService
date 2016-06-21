@@ -1,0 +1,566 @@
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server version:        Apache Tomcat/7.0.59
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server built:          Jan 28 2015 15:51:10 UTC
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server number:         7.0.59.0
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Name:               Windows 7
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Version:            6.1
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Architecture:          amd64
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Java Home:             C:\Program Files\Java\jre7
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Version:           1.7.0_75-b13
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Vendor:            Oracle Corporation
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_BASE:         C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_HOME:         C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.config.file=C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\conf\logging.properties
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.endorsed.dirs=C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\endorsed
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.base=C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.home=C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.io.tmpdir=C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\temp
+mar 05, 2015 12:36:10 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: C:\Program Files\Java\jre7\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\Isabel\Desktop\apache-ant-1.9.4\bin; C:\Program Files\Java\jdk1.8.0_25\bin;.
+mar 05, 2015 12:36:10 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 12:36:10 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 12:36:10 AM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 1679 ms
+mar 05, 2015 12:36:10 AM org.apache.catalina.core.StandardService startInternal
+INFORMACIÓN: Arrancando servicio Catalina
+mar 05, 2015 12:36:10 AM org.apache.catalina.core.StandardEngine startInternal
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/7.0.59
+mar 05, 2015 12:36:11 AM org.apache.catalina.startup.HostConfig deployWAR
+INFORMACIÓN: Despliegue del archivo C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\axis2.war de la aplicación web
+mar 05, 2015 12:36:19 AM org.apache.catalina.util.SessionIdGeneratorBase createSecureRandom
+INFORMACIÓN: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [213] milliseconds.
+mar 05, 2015 12:36:22 AM org.apache.catalina.startup.HostConfig deployWAR
+INFORMACIÓN: Deployment of web application archive C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\axis2.war has finished in 11.245 ms
+mar 05, 2015 12:36:22 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\docs de la aplicación web
+mar 05, 2015 12:36:22 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\docs has finished in 143 ms
+mar 05, 2015 12:36:22 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\examples de la aplicación web
+mar 05, 2015 12:36:24 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\examples has finished in 1.676 ms
+mar 05, 2015 12:36:24 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\host-manager de la aplicación web
+mar 05, 2015 12:36:24 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\host-manager has finished in 168 ms
+mar 05, 2015 12:36:24 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\manager de la aplicación web
+mar 05, 2015 12:36:24 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\manager has finished in 125 ms
+mar 05, 2015 12:36:24 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\ROOT de la aplicación web
+mar 05, 2015 12:36:24 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\ROOT has finished in 106 ms
+mar 05, 2015 12:36:24 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 12:36:24 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 12:36:24 AM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 13838 ms
+mar 05, 2015 10:32:38 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server version:        Apache Tomcat/7.0.59
+mar 05, 2015 10:32:38 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server built:          Jan 28 2015 15:51:10 UTC
+mar 05, 2015 10:32:38 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server number:         7.0.59.0
+mar 05, 2015 10:32:38 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Name:               Windows 7
+mar 05, 2015 10:32:38 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Version:            6.1
+mar 05, 2015 10:32:38 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Architecture:          amd64
+mar 05, 2015 10:32:38 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Java Home:             C:\Program Files\Java\jre7
+mar 05, 2015 10:32:38 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Version:           1.7.0_75-b13
+mar 05, 2015 10:32:38 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Vendor:            Oracle Corporation
+mar 05, 2015 10:32:39 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_BASE:         C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59
+mar 05, 2015 10:32:39 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_HOME:         C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59
+mar 05, 2015 10:32:39 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.config.file=C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\conf\logging.properties
+mar 05, 2015 10:32:39 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+mar 05, 2015 10:32:39 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.endorsed.dirs=C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\endorsed
+mar 05, 2015 10:32:39 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.base=C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59
+mar 05, 2015 10:32:39 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.home=C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59
+mar 05, 2015 10:32:39 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.io.tmpdir=C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\temp
+mar 05, 2015 10:32:39 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: C:\Program Files\Java\jre7\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\Isabel\Desktop\apache-ant-1.9.4\bin; C:\Program Files\Java\jdk1.8.0_25\bin;.
+mar 05, 2015 10:32:40 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 10:32:40 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 10:32:40 AM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 4687 ms
+mar 05, 2015 10:32:40 AM org.apache.catalina.core.StandardService startInternal
+INFORMACIÓN: Arrancando servicio Catalina
+mar 05, 2015 10:32:40 AM org.apache.catalina.core.StandardEngine startInternal
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/7.0.59
+mar 05, 2015 10:32:41 AM org.apache.catalina.startup.HostConfig deployWAR
+INFORMACIÓN: Despliegue del archivo C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\axis2.war de la aplicación web
+mar 05, 2015 10:33:02 AM org.apache.catalina.util.SessionIdGeneratorBase createSecureRandom
+INFORMACIÓN: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [172] milliseconds.
+mar 05, 2015 10:33:05 AM org.apache.catalina.startup.HostConfig deployWAR
+INFORMACIÓN: Deployment of web application archive C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\axis2.war has finished in 23.759 ms
+mar 05, 2015 10:33:05 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\docs de la aplicación web
+mar 05, 2015 10:33:05 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\docs has finished in 313 ms
+mar 05, 2015 10:33:05 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\examples de la aplicación web
+mar 05, 2015 10:33:09 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\examples has finished in 3.690 ms
+mar 05, 2015 10:33:09 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\host-manager de la aplicación web
+mar 05, 2015 10:33:09 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\host-manager has finished in 221 ms
+mar 05, 2015 10:33:09 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\manager de la aplicación web
+mar 05, 2015 10:33:10 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\manager has finished in 463 ms
+mar 05, 2015 10:33:10 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\ROOT de la aplicación web
+mar 05, 2015 10:33:10 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\ROOT has finished in 143 ms
+mar 05, 2015 10:33:10 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 10:33:10 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 10:33:10 AM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 29681 ms
+mar 05, 2015 10:38:49 AM org.apache.coyote.AbstractProtocol pause
+INFORMACIÓN: Pausing ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 10:38:49 AM org.apache.coyote.AbstractProtocol pause
+INFORMACIÓN: Pausing ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 10:38:49 AM org.apache.catalina.core.StandardService stopInternal
+INFORMACIÓN: Parando servicio Catalina
+mar 05, 2015 10:38:50 AM org.apache.coyote.AbstractProtocol stop
+INFORMACIÓN: Stopping ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 10:38:50 AM org.apache.coyote.AbstractProtocol stop
+INFORMACIÓN: Stopping ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 10:38:50 AM org.apache.coyote.AbstractProtocol destroy
+INFORMACIÓN: Destroying ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 10:38:50 AM org.apache.coyote.AbstractProtocol destroy
+INFORMACIÓN: Destroying ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 10:52:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server version:        Apache Tomcat/7.0.59
+mar 05, 2015 10:52:09 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server built:          Jan 28 2015 15:51:10 UTC
+mar 05, 2015 10:52:09 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server number:         7.0.59.0
+mar 05, 2015 10:52:09 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Name:               Windows 7
+mar 05, 2015 10:52:09 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Version:            6.1
+mar 05, 2015 10:52:09 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Architecture:          amd64
+mar 05, 2015 10:52:09 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Java Home:             C:\Program Files\Java\jre7
+mar 05, 2015 10:52:09 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Version:           1.7.0_75-b13
+mar 05, 2015 10:52:09 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Vendor:            Oracle Corporation
+mar 05, 2015 10:52:09 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_BASE:         C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59
+mar 05, 2015 10:52:09 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_HOME:         C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59
+mar 05, 2015 10:52:09 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.config.file=C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\conf\logging.properties
+mar 05, 2015 10:52:09 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+mar 05, 2015 10:52:09 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.endorsed.dirs=C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\endorsed
+mar 05, 2015 10:52:09 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.base=C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59
+mar 05, 2015 10:52:09 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.home=C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59
+mar 05, 2015 10:52:09 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.io.tmpdir=C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\temp
+mar 05, 2015 10:52:09 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: C:\Program Files\Java\jre7\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\Isabel\Desktop\apache-ant-1.9.4\bin; C:\Program Files\Java\jdk1.8.0_25\bin;.
+mar 05, 2015 10:52:09 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 10:52:09 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 10:52:09 AM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 4880 ms
+mar 05, 2015 10:52:10 AM org.apache.catalina.core.StandardService startInternal
+INFORMACIÓN: Arrancando servicio Catalina
+mar 05, 2015 10:52:10 AM org.apache.catalina.core.StandardEngine startInternal
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/7.0.59
+mar 05, 2015 10:52:10 AM org.apache.catalina.startup.HostConfig deployWAR
+INFORMACIÓN: Despliegue del archivo C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\axis2.war de la aplicación web
+mar 05, 2015 10:52:26 AM org.apache.catalina.util.SessionIdGeneratorBase createSecureRandom
+INFORMACIÓN: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [208] milliseconds.
+mar 05, 2015 10:52:29 AM org.apache.catalina.startup.HostConfig deployWAR
+INFORMACIÓN: Deployment of web application archive C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\axis2.war has finished in 18.962 ms
+mar 05, 2015 10:52:29 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\docs de la aplicación web
+mar 05, 2015 10:52:29 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\docs has finished in 239 ms
+mar 05, 2015 10:52:29 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\examples de la aplicación web
+mar 05, 2015 10:52:31 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\examples has finished in 2.089 ms
+mar 05, 2015 10:52:31 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\host-manager de la aplicación web
+mar 05, 2015 10:52:31 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\host-manager has finished in 165 ms
+mar 05, 2015 10:52:31 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\manager de la aplicación web
+mar 05, 2015 10:52:32 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\manager has finished in 179 ms
+mar 05, 2015 10:52:32 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\ROOT de la aplicación web
+mar 05, 2015 10:52:32 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST_PR2\AST1_apache-tomcat-7.0.59apache-tomcat-7.0.59\webapps\ROOT has finished in 124 ms
+mar 05, 2015 10:52:32 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 10:52:32 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 10:52:32 AM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 22269 ms
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server version:        Apache Tomcat/7.0.59
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server built:          Jan 28 2015 15:51:10 UTC
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server number:         7.0.59.0
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Name:               Windows 8.1
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Version:            6.3
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Architecture:          amd64
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Java Home:             C:\Program Files\Java\jre1.8.0_25
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Version:           1.8.0_25-b18
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Vendor:            Oracle Corporation
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_BASE:         C:\Users\Sergio\Desktop\AST\Tomcat_axis2
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_HOME:         C:\Users\Sergio\Desktop\AST\Tomcat_axis2
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.config.file=C:\Users\Sergio\Desktop\AST\Tomcat_axis2\conf\logging.properties
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.endorsed.dirs=C:\Users\Sergio\Desktop\AST\Tomcat_axis2\endorsed
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.base=C:\Users\Sergio\Desktop\AST\Tomcat_axis2
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.home=C:\Users\Sergio\Desktop\AST\Tomcat_axis2
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.io.tmpdir=C:\Users\Sergio\Desktop\AST\Tomcat_axis2\temp
+mar 05, 2015 11:56:20 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: C:\Program Files\Java\jre1.8.0_25\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Users\Sergio\Desktop\AST\apache-ant-1.9.4\bin; C:\Program Files\Java\jdk1.8.0_25\bin;.
+mar 05, 2015 11:56:20 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 11:56:20 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 403 ms
+mar 05, 2015 11:56:20 AM org.apache.catalina.core.StandardService startInternal
+INFORMACIÓN: Arrancando servicio Catalina
+mar 05, 2015 11:56:20 AM org.apache.catalina.core.StandardEngine startInternal
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/7.0.59
+mar 05, 2015 11:56:20 AM org.apache.catalina.startup.HostConfig deployWAR
+INFORMACIÓN: Despliegue del archivo C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\axis2.war de la aplicación web
+mar 05, 2015 11:56:23 AM org.apache.catalina.startup.HostConfig deployWAR
+INFORMACIÓN: Deployment of web application archive C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\axis2.war has finished in 2.567 ms
+mar 05, 2015 11:56:23 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\docs de la aplicación web
+mar 05, 2015 11:56:23 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\docs has finished in 27 ms
+mar 05, 2015 11:56:23 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\examples de la aplicación web
+mar 05, 2015 11:56:23 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\examples has finished in 307 ms
+mar 05, 2015 11:56:23 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\host-manager de la aplicación web
+mar 05, 2015 11:56:23 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\host-manager has finished in 41 ms
+mar 05, 2015 11:56:23 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\manager de la aplicación web
+mar 05, 2015 11:56:23 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\manager has finished in 30 ms
+mar 05, 2015 11:56:23 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\ROOT de la aplicación web
+mar 05, 2015 11:56:23 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\ROOT has finished in 26 ms
+mar 05, 2015 11:56:23 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 11:56:23 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 11:56:23 AM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 3046 ms
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server version:        Apache Tomcat/7.0.59
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server built:          Jan 28 2015 15:51:10 UTC
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server number:         7.0.59.0
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Name:               Windows 8.1
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Version:            6.3
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Architecture:          amd64
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Java Home:             C:\Program Files\Java\jre1.8.0_25
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Version:           1.8.0_25-b18
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Vendor:            Oracle Corporation
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_BASE:         C:\Users\Sergio\Desktop\AST\Tomcat_axis2
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_HOME:         C:\Users\Sergio\Desktop\AST\Tomcat_axis2
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.config.file=C:\Users\Sergio\Desktop\AST\Tomcat_axis2\conf\logging.properties
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.endorsed.dirs=C:\Users\Sergio\Desktop\AST\Tomcat_axis2\endorsed
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.base=C:\Users\Sergio\Desktop\AST\Tomcat_axis2
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.home=C:\Users\Sergio\Desktop\AST\Tomcat_axis2
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.io.tmpdir=C:\Users\Sergio\Desktop\AST\Tomcat_axis2\temp
+mar 05, 2015 12:01:23 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: C:\Program Files\Java\jre1.8.0_25\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Users\Sergio\Desktop\AST\apache-ant-1.9.4\bin; C:\Program Files\Java\jdk1.8.0_25\bin;.
+mar 05, 2015 12:01:23 PM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 12:01:23 PM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 313 ms
+mar 05, 2015 12:01:23 PM org.apache.catalina.core.StandardService startInternal
+INFORMACIÓN: Arrancando servicio Catalina
+mar 05, 2015 12:01:23 PM org.apache.catalina.core.StandardEngine startInternal
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/7.0.59
+mar 05, 2015 12:01:23 PM org.apache.catalina.startup.HostConfig deployWAR
+INFORMACIÓN: Despliegue del archivo C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\axis2.war de la aplicación web
+mar 05, 2015 12:01:25 PM org.apache.catalina.startup.HostConfig deployWAR
+INFORMACIÓN: Deployment of web application archive C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\axis2.war has finished in 1.755 ms
+mar 05, 2015 12:01:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\docs de la aplicación web
+mar 05, 2015 12:01:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\docs has finished in 27 ms
+mar 05, 2015 12:01:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\examples de la aplicación web
+mar 05, 2015 12:01:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\examples has finished in 191 ms
+mar 05, 2015 12:01:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\host-manager de la aplicación web
+mar 05, 2015 12:01:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\host-manager has finished in 33 ms
+mar 05, 2015 12:01:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\manager de la aplicación web
+mar 05, 2015 12:01:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\manager has finished in 39 ms
+mar 05, 2015 12:01:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\ROOT de la aplicación web
+mar 05, 2015 12:01:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\ROOT has finished in 23 ms
+mar 05, 2015 12:01:25 PM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 12:01:25 PM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 12:01:25 PM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 2109 ms
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server version:        Apache Tomcat/7.0.59
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server built:          Jan 28 2015 15:51:10 UTC
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server number:         7.0.59.0
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Name:               Windows 8.1
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Version:            6.3
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Architecture:          amd64
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Java Home:             C:\Program Files\Java\jre1.8.0_25
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Version:           1.8.0_25-b18
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Vendor:            Oracle Corporation
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_BASE:         C:\Users\Sergio\Desktop\AST\Tomcat_axis2
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_HOME:         C:\Users\Sergio\Desktop\AST\Tomcat_axis2
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.config.file=C:\Users\Sergio\Desktop\AST\Tomcat_axis2\conf\logging.properties
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.endorsed.dirs=C:\Users\Sergio\Desktop\AST\Tomcat_axis2\endorsed
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.base=C:\Users\Sergio\Desktop\AST\Tomcat_axis2
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.home=C:\Users\Sergio\Desktop\AST\Tomcat_axis2
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.io.tmpdir=C:\Users\Sergio\Desktop\AST\Tomcat_axis2\temp
+mar 05, 2015 12:19:44 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: C:\Program Files\Java\jre1.8.0_25\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Users\Sergio\Desktop\AST\apache-ant-1.9.4\bin; C:\Program Files\Java\jdk1.8.0_25\bin;.
+mar 05, 2015 12:19:44 PM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 12:19:44 PM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 315 ms
+mar 05, 2015 12:19:44 PM org.apache.catalina.core.StandardService startInternal
+INFORMACIÓN: Arrancando servicio Catalina
+mar 05, 2015 12:19:44 PM org.apache.catalina.core.StandardEngine startInternal
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/7.0.59
+mar 05, 2015 12:19:44 PM org.apache.catalina.startup.HostConfig deployWAR
+INFORMACIÓN: Despliegue del archivo C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\axis2.war de la aplicación web
+mar 05, 2015 12:19:46 PM org.apache.catalina.startup.HostConfig deployWAR
+INFORMACIÓN: Deployment of web application archive C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\axis2.war has finished in 1.911 ms
+mar 05, 2015 12:19:46 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\docs de la aplicación web
+mar 05, 2015 12:19:46 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\docs has finished in 32 ms
+mar 05, 2015 12:19:46 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\examples de la aplicación web
+mar 05, 2015 12:19:46 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\examples has finished in 208 ms
+mar 05, 2015 12:19:46 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\host-manager de la aplicación web
+mar 05, 2015 12:19:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\host-manager has finished in 34 ms
+mar 05, 2015 12:19:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\manager de la aplicación web
+mar 05, 2015 12:19:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\manager has finished in 40 ms
+mar 05, 2015 12:19:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\ROOT de la aplicación web
+mar 05, 2015 12:19:47 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Sergio\Desktop\AST\Tomcat_axis2\webapps\ROOT has finished in 26 ms
+mar 05, 2015 12:19:47 PM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 12:19:47 PM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 12:19:47 PM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 2292 ms
+mar 05, 2015 1:57:12 PM org.apache.coyote.AbstractProtocol pause
+INFORMACIÓN: Pausing ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 1:57:12 PM org.apache.coyote.AbstractProtocol pause
+INFORMACIÓN: Pausing ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 1:57:12 PM org.apache.catalina.core.StandardService stopInternal
+INFORMACIÓN: Parando servicio Catalina
+mar 05, 2015 1:57:12 PM org.apache.coyote.AbstractProtocol stop
+INFORMACIÓN: Stopping ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 1:57:12 PM org.apache.coyote.AbstractProtocol stop
+INFORMACIÓN: Stopping ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 1:57:12 PM org.apache.coyote.AbstractProtocol destroy
+INFORMACIÓN: Destroying ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 1:57:12 PM org.apache.coyote.AbstractProtocol destroy
+INFORMACIÓN: Destroying ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server version:        Apache Tomcat/7.0.59
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server built:          Jan 28 2015 15:51:10 UTC
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server number:         7.0.59.0
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Name:               Windows 7
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Version:            6.1
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Architecture:          amd64
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Java Home:             C:\Program Files\Java\jre7
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Version:           1.7.0_75-b13
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Vendor:            Oracle Corporation
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_BASE:         C:\Users\Isabel\Desktop\AST2\Tomcat_axis2
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_HOME:         C:\Users\Isabel\Desktop\AST2\Tomcat_axis2
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.config.file=C:\Users\Isabel\Desktop\AST2\Tomcat_axis2\conf\logging.properties
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.endorsed.dirs=C:\Users\Isabel\Desktop\AST2\Tomcat_axis2\endorsed
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.base=C:\Users\Isabel\Desktop\AST2\Tomcat_axis2
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.home=C:\Users\Isabel\Desktop\AST2\Tomcat_axis2
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.io.tmpdir=C:\Users\Isabel\Desktop\AST2\Tomcat_axis2\temp
+mar 05, 2015 3:25:16 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: C:\Program Files\Java\jre7\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\Isabel\Desktop\apache-ant-1.9.4\bin; C:\Program Files\Java\jdk1.7.0_75\bin;.
+mar 05, 2015 3:25:16 PM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 3:25:16 PM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 1573 ms
+mar 05, 2015 3:25:16 PM org.apache.catalina.core.StandardService startInternal
+INFORMACIÓN: Arrancando servicio Catalina
+mar 05, 2015 3:25:16 PM org.apache.catalina.core.StandardEngine startInternal
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/7.0.59
+mar 05, 2015 3:25:16 PM org.apache.catalina.startup.HostConfig deployWAR
+INFORMACIÓN: Despliegue del archivo C:\Users\Isabel\Desktop\AST2\Tomcat_axis2\webapps\axis2.war de la aplicación web
+mar 05, 2015 3:25:24 PM org.apache.catalina.startup.HostConfig deployWAR
+INFORMACIÓN: Deployment of web application archive C:\Users\Isabel\Desktop\AST2\Tomcat_axis2\webapps\axis2.war has finished in 7.826 ms
+mar 05, 2015 3:25:24 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST2\Tomcat_axis2\webapps\docs de la aplicación web
+mar 05, 2015 3:25:24 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST2\Tomcat_axis2\webapps\docs has finished in 114 ms
+mar 05, 2015 3:25:24 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST2\Tomcat_axis2\webapps\examples de la aplicación web
+mar 05, 2015 3:25:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST2\Tomcat_axis2\webapps\examples has finished in 1.004 ms
+mar 05, 2015 3:25:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST2\Tomcat_axis2\webapps\host-manager de la aplicación web
+mar 05, 2015 3:25:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST2\Tomcat_axis2\webapps\host-manager has finished in 183 ms
+mar 05, 2015 3:25:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST2\Tomcat_axis2\webapps\manager de la aplicación web
+mar 05, 2015 3:25:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST2\Tomcat_axis2\webapps\manager has finished in 124 ms
+mar 05, 2015 3:25:25 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Isabel\Desktop\AST2\Tomcat_axis2\webapps\ROOT de la aplicación web
+mar 05, 2015 3:25:26 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Isabel\Desktop\AST2\Tomcat_axis2\webapps\ROOT has finished in 137 ms
+mar 05, 2015 3:25:26 PM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["http-bio-8080"]
+mar 05, 2015 3:25:26 PM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["ajp-bio-8009"]
+mar 05, 2015 3:25:26 PM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 9623 ms

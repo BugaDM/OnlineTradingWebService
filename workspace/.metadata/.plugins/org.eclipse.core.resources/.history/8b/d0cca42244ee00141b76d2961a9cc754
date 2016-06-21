@@ -1,0 +1,553 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Cliente {
+	
+	static Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) throws Exception {
+		System.out
+				.println("\n****BIENVENIDO AL CLIENTE DE TRACTORES BERRIO****");
+		int opt = 0;
+		while (opt != 3) {
+			
+			System.out.println("Seleccione su tipo de usuario:");
+			System.out.println("\t1. Debugger");
+			System.out.println("\t2. Usuario");
+			System.out.println("\t3. Salir del Cliente");
+
+			
+			opt = Integer.parseInt(sc.nextLine());
+			switch(opt){
+			case 1:	RamaDebugger();
+					break;
+			case 2: RamaUser();
+					break;
+			case 3: sc.close();
+					break;
+			default: System.out.println("Introduzca una opcion valida");
+					break;
+			}
+
+		}
+
+		System.out.println("****SALIENDO DEL CLIENTE****\n");
+		return;
+	}
+
+	public static void RamaDebugger() throws Exception {
+		
+		String targetEndpoint="";
+		Consulta consulta = new Consulta();
+		targetEndpoint= consulta.getEndpoint();
+		System.out.println("Endpoint: "+targetEndpoint);
+		//ConfigurationContext cc = ConfigurationContextFactory.createConfigurationContextFromFileSystem("C:\Users\Isabel\Desktop\ASTP\axis2-1.6.2\repository", "C:\Users\Isabel\Desktop\ASTP\axis2-1.6.2\conf\axis2.xml");
+		//OrquestadorStub orquestador = new OrquestadorStub(cc,targetEndpoint);
+		OrquestadorStub orquestador = new OrquestadorStub(targetEndpoint);
+		System.out.println("-Ha seleccionado Debugger");
+		boolean result = false;
+		int opt = 0;
+		
+		Scanner sc= new Scanner(System.in);
+		while (true) {
+			
+			System.out.println(">Seleccione una funcion para probar");
+			System.out.println("\t1.  Notificacion a traves de Twitter");
+			System.out.println("\t2.  Cambio de divisas");
+			System.out.println("\t3.  Ver usuarios");
+			System.out.println("\t4.  Ver stock");
+			System.out.println("\t5.  Añadir usuario");
+			System.out.println("\t6.  Añadir elemento");
+			System.out.println("\t7.  Borrar usuario");
+			System.out.println("\t8.  Borrar elemento");
+			System.out.println("\t9.  Reestablecer BD usuarios");
+			System.out.println("\t10. Reestablecer BD stock");
+			System.out.println("\t11. Volver al menu principal");
+
+			opt = Integer.parseInt(sc.nextLine());
+			
+			sc.close();
+			switch (opt) {
+			case 1:
+				System.out
+						.println("-Ha seleccionado notificacion a traves de Twitter");
+				System.out.println(">Introduzca el mensaje:");
+				String mensaje = sc.nextLine();
+				tuitear(orquestador, mensaje);
+				System.out.println("-Listo!");
+				break;
+
+			case 2:
+				System.out.println("-Ha seleccionado cambio de divisas");
+				System.out.println(">Introduzca la primera divisa");
+				String divisa1 = sc.nextLine();
+				System.out.println(">Introduzca la segunda divisa");
+				String divisa2 = sc.nextLine();
+				double relacion = cambioDivisas(orquestador, divisa1, divisa2);
+				System.out.println("-La relacion " + divisa1 + "/" + divisa2
+						+ " es " + relacion);
+				break;
+
+			case 3:
+				System.out.println("-Ha seleccionado ver usuarios");
+				String[] users = verUsers(orquestador);
+				for (int i = 0; i < users.length; i++) {
+					System.out.println(users[i]);
+				}
+				break;
+
+			case 4:
+				System.out.println("-Ha seleccionado ver stock");
+				String[] stock = verStock(orquestador);
+				for (int i = 0; i < stock.length; i++) {
+					System.out.println(stock[i]);
+				}
+				break;
+
+			case 5:
+				System.out.println("-Ha seleccionado aï¿½adir usuario");
+				System.out.println(">Introduzca el nombre del nuevo usuario");
+				String nombre = sc.nextLine();
+				System.out.println(">Introduzca el saldo inicial");
+				int monedero = Integer.parseInt(sc.nextLine());
+				System.out
+						.println(">Introduzca su moneda de preferencia[0->EUR,1->USD]");
+				int prefs = Integer.parseInt(sc.nextLine());
+				result = anadirUser(orquestador, nombre, monedero, prefs);
+				if (result)
+					System.out
+							.println("-La operaciï¿½n se ha realizado correctamente");
+				else
+					System.out.println("-No se podido realizar la operacion");
+				break;
+
+			case 6:
+				System.out.println("-Ha seleccionado aï¿½adir elemento");
+				System.out.println(">Introduzca la marca del elemento");
+				String marca = sc.nextLine();
+				System.out.println(">Introduzca el modelo");
+				String modelo = sc.nextLine();
+				System.out.println(">Introduzca el precio");
+				int precio = Integer.parseInt(sc.nextLine());
+				result = anadirElemento(orquestador, marca, modelo, precio);
+				if (result)
+					System.out
+							.println("-La operacion se ha realizado correctamente");
+				else
+					System.out.println("-No se podido realizar la operacion");
+				break;
+
+			case 7:
+				System.out.println("-Ha seleccionado borrar usuario");
+				System.out
+						.println(">Introduzca el ID del usuario que desea borrar");
+				int id = Integer.parseInt(sc.nextLine());
+				result = borrarUser(orquestador, id);
+				if (result)
+					System.out
+							.println("-La operaciÃ³n se ha realizado correctamente");
+				else
+					System.out.println("-No se podido realizar la operacion");
+				break;
+
+			case 8:
+				System.out.println("-Ha seleccionado borrar elemento");
+				System.out
+						.println(">Introduzca el ID del elemento que desea borrar");
+				id = Integer.parseInt(sc.nextLine());
+				System.out
+						.println(">Introduzca cuanto dinero tiene en el monedero");
+				monedero = Integer.parseInt(sc.nextLine());
+				int monedero2 = borrarElemento(orquestador, id, monedero,0);
+				if (monedero == monedero2)
+					result = false;
+				else
+					result = true;
+				if (result)
+					System.out
+							.println("-La operaciï¿½n se ha realizado correctamente");
+				else
+					System.out.println("-No se podido realizar la operacion");
+				break;
+
+			case 9:
+				System.out
+						.println("-Ha seleccionado reestablecer BD de usuarios");
+				reestablecerUsers(orquestador);
+				System.out.println("-Listo!");
+				break;
+
+			case 10:
+				System.out.println("-Ha seleccionado reestablecer BD de stock");
+				reestablecerStock(orquestador);
+				System.out.println("-Listo!");
+				break;
+
+			case 11:
+				sc.close();
+				return;
+
+			default:
+				System.out.println("-Opcion incorrecta");
+				break;
+			}
+
+		}
+		
+	}
+
+	public static void RamaUser() throws Exception {
+		
+		String targetEndpoint="";
+		Consulta consulta = new Consulta();
+		targetEndpoint= consulta.getEndpoint();
+		OrquestadorStub orquestador = new OrquestadorStub(targetEndpoint);
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("-Ha seleccionado Usuario");
+		while (true) {
+			String nombre_user = "";
+			int monedero = 0;
+			int prefs = 0;
+
+			System.out.println(">Seleccione una opcion: ");
+			System.out
+					.println("\t1. Registrarse\n\t2. Iniciar sesion\n\t3. Volver al menu inicial");
+			int opt = Integer.parseInt(sc.nextLine());
+
+			switch (opt) {
+			case 1:
+				boolean result = registrarse(orquestador);
+				if (result) {
+					System.out.println("-Usuario registrado, iniciando sesion");
+					String[] user = login(orquestador);
+					if (user.equals(null)) {
+						System.out
+								.println("-No existe el usuario seleccionado");
+						continue;
+					} else {
+						nombre_user = user[1];
+						monedero = Integer.parseInt(user[2]);
+						prefs = Integer.parseInt(user[3]);
+
+						System.out
+								.println("-Sesion iniciada correctamente, sus datos son: ");
+						System.out.println("ID: " + user[0]);
+						System.out.println("Nombre: " + user[1]);
+						System.out.println("Monedero: " + user[2]);
+						if (prefs == 0)
+							System.out.println("Moneda: EUR");
+						else
+							System.out.println("Moneda: USD");
+					}
+
+				}
+				break;
+
+			case 2:
+				String[] user = login(orquestador);
+				if (user.equals(null)) {
+					System.out.println("-No existe el usuario seleccionado");
+					continue;
+				} else {
+					System.out
+							.println("-Sesion iniciada correctamente, sus datos son: ");
+					System.out.println("ID: " + user[0]);
+					nombre_user = user[1];
+					System.out.println("Nombre: " + user[1]);
+					prefs = Integer.parseInt(user[3]);
+					if (prefs == 0) {
+						System.out.println("Monedero: " + user[2]);
+						System.out.println("Moneda: EUR");
+					} else {
+						double relacion = cambioDivisas(orquestador, "EUR",
+								"USD");
+						monedero = (int) (Integer.parseInt(user[2]) * relacion);
+						System.out.println("Monedero: " + user[2]);
+						System.out.println("Moneda: USD");
+					}
+				}
+				break;
+
+			case 3:
+				sc.close();
+				return;
+
+			}
+
+			while (true) {
+				System.out.println(">Selecciones una opcion:");
+				System.out
+						.println("\t1. Ver catalogo\n\t2. Comprar elemento\n\t3. Poner un nuevo elemento a la venta\n\t4. Cerrar sesiï¿½n");
+				opt = Integer.parseInt(sc.nextLine());
+
+				switch (opt) {
+				case 1:
+					String[] stock = verStock(orquestador);
+					List<String[]> lista = getAllParametros(stock);
+					for (int i = 0; i < lista.size(); i++) {
+						String[] elemento = lista.get(i);
+						if (prefs == 1) {
+							double relacion = cambioDivisas(orquestador, "EUR",
+									"USD");
+							elemento[3] = String.valueOf((int) (Integer
+									.parseInt(elemento[3]) * relacion));
+						}
+						System.out.println("[ID: " + elemento[0] + " | Marca: "
+								+ elemento[1] + " | Modelo: " + elemento[2]
+								+ " | Precio: " + elemento[3] + "]");
+					}
+					continue;
+
+				case 2:
+					System.out
+							.println(">Introduzca el ID del elemento que desea borrar");
+					int id_elemento = Integer.parseInt(sc.nextLine());
+					int monedero2 = borrarElemento(orquestador, id_elemento, monedero,prefs);
+					if (monedero == monedero2)
+						System.out
+						.println("-No se podido realizar la operacion");
+					else{
+						monedero=monedero2;
+						System.out
+						.println("-La operaciï¿½n se ha realizado correctamente");
+						String[]elemento =getParametros(id_elemento,verStock(orquestador));
+						String tweet="Acabamos de vender un "+elemento[1]+" "+elemento[2]+" a "+nombre_user+" por "+elemento[3]+"!";
+						tuitear(orquestador,tweet);
+					}
+					continue;
+				
+				case 3:
+					System.out.println(">Introduzca la marca");
+					String marca = sc.nextLine();
+					System.out.println(">Introduzca el modelo");
+					String modelo = sc.nextLine();
+					System.out.println(">Introduzca el precio");
+					int precio = Integer.parseInt(sc.nextLine());
+					if(prefs==1){
+						double relacion = cambioDivisas(orquestador, "USD",
+								"EUR");
+						precio = (int) (precio * relacion);
+					}
+					boolean result = anadirElemento(orquestador, marca, modelo, precio);
+					if (result)
+						System.out
+								.println("-La operacion se ha realizado correctamente");
+					else
+						System.out.println("-No se podido realizar la operacion");
+					continue;
+					
+				case 4: break;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	public static void tuitear(OrquestadorStub orquestador, String tweet)
+			throws Exception {
+		OrquestadorStub.Tuitear tuitear = new OrquestadorStub.Tuitear();
+		tuitear.setMensaje(tweet);
+		orquestador.tuitear(tuitear);
+		return;
+	}
+
+	public static double cambioDivisas(OrquestadorStub orquestador,
+			String divisa1, String divisa2) throws Exception {
+		OrquestadorStub.Conversor conversor = new OrquestadorStub.Conversor();
+		conversor.setDivisa1(divisa1);
+		conversor.setDivisa2(divisa2);
+		OrquestadorStub.ConversorResponse response = orquestador
+				.conversor(conversor);
+		return response.get_return();
+	}
+
+	public static String[] verUsers(OrquestadorStub orquestador)
+			throws Exception {
+		OrquestadorStub.VerUsers verUsers = new OrquestadorStub.VerUsers();
+		OrquestadorStub.VerUsersResponse response = orquestador
+				.verUsers(verUsers);
+		return response.get_return();
+	}
+
+	public static String[] verStock(OrquestadorStub orquestador)
+			throws Exception {
+		OrquestadorStub.VerStock verStock = new OrquestadorStub.VerStock();
+		OrquestadorStub.VerStockResponse response = orquestador
+				.verStock(verStock);
+		return response.get_return();
+	}
+
+	public static boolean anadirUser(OrquestadorStub orquestador,
+			String nombre, int monedero, int prefs) throws Exception {
+		OrquestadorStub.AnadirUser anadirUser = new OrquestadorStub.AnadirUser();
+		anadirUser.setNombre(nombre);
+		anadirUser.setMonedero(monedero);
+		anadirUser.setPrefs(prefs);
+		OrquestadorStub.AnadirUserResponse response = orquestador
+				.anadirUser(anadirUser);
+		return response.get_return();
+	}
+
+	public static boolean anadirElemento(OrquestadorStub orquestador,
+			String marca, String modelo, int precio) throws Exception {
+		OrquestadorStub.AnadirElemento anadirElemento = new OrquestadorStub.AnadirElemento();
+		anadirElemento.setMarca(marca);
+		anadirElemento.setModelo(modelo);
+		anadirElemento.setPrecio(precio);
+		OrquestadorStub.AnadirElementoResponse response = orquestador
+				.anadirElemento(anadirElemento);
+		return response.get_return();
+	}
+
+	public static boolean borrarUser(OrquestadorStub orquestador, int id)
+			throws Exception {
+		OrquestadorStub.BorrarUser borrarUser = new OrquestadorStub.BorrarUser();
+		borrarUser.setId(id);
+		OrquestadorStub.BorrarUserResponse response = orquestador
+				.borrarUser(borrarUser);
+		return response.get_return();
+	}
+
+	public static int borrarElemento(OrquestadorStub orquestador, int id,
+			int monedero,int prefs) throws Exception {
+		
+		if(prefs==1){
+			double relacion = cambioDivisas(orquestador, "USD",
+					"EUR");
+			monedero = (int) (monedero * relacion);
+		}
+		
+		String[] stock = verStock(orquestador);
+		OrquestadorStub.BorrarElemento borrarElemento = new OrquestadorStub.BorrarElemento();
+		borrarElemento.setId(id);
+		borrarElemento.setMonedero(monedero);
+		OrquestadorStub.BorrarElementoResponse response = orquestador
+				.borrarElemento(borrarElemento);
+		if (response.get_return()){
+			int precio = precioElemento(id, stock);
+			monedero = monedero - precio;
+			if(prefs==1){
+				double relacion = cambioDivisas(orquestador, "EUR",
+						"USD");
+				monedero = (int) (monedero * relacion);
+			}
+		}
+		return monedero;
+	}
+
+	public static void reestablecerUsers(OrquestadorStub orquestador)
+			throws Exception {
+		OrquestadorStub.ReestablecerUsers ru = new OrquestadorStub.ReestablecerUsers();
+		orquestador.reestablecerUsers(ru);
+		return;
+	}
+
+	public static void reestablecerStock(OrquestadorStub orquestador)
+			throws Exception {
+		OrquestadorStub.ReestablecerStock rs = new OrquestadorStub.ReestablecerStock();
+		orquestador.reestablecerStock(rs);
+		return;
+	}
+
+	public static int precioElemento(int id, String[] stock) {
+		int precio = 0;
+		for (int i = 0; i < stock.length; i++) {
+			String[] substring1 = stock[i].split("\\s+");
+			if (Integer.parseInt(substring1[1]) == id) {
+				String[] substring2 = substring1[10].split("\\]");
+				precio = Integer.parseInt(substring2[0]);
+			}
+			;
+		}
+
+		return precio;
+	}
+
+	public static String[] getParametros(int id, String[] BD) {
+		for (int i = 0; i < BD.length; i++) {
+
+			String str = BD[i];
+			String[] str2 = str.split("\\[");
+			String[] str3 = str2[1].split("\\]");
+			String[] str4 = str3[0].split("\\|");
+
+			List<String[]> lista = new ArrayList<String[]>();
+			for (int j = 0; j < str4.length; j++) {
+				String[] str5 = str4[j].split("\\:");
+				lista.add(str5);
+			}
+
+			String[] result = new String[lista.size()];
+			for (int k = 0; k < lista.size(); k++) {
+				result[k] = lista.get(k)[1].trim();
+			}
+
+			if (Integer.parseInt(result[0]) == id)
+				return result;
+			else
+				continue;
+		}
+
+		return null;
+	}
+
+	public static List<String[]> getAllParametros(String[] BD) {
+
+		List<String[]> resultado = new ArrayList<String[]>();
+		for (int i = 0; i < BD.length; i++) {
+
+			String str = BD[i];
+			String[] str2 = str.split("\\[");
+			String[] str3 = str2[1].split("\\]");
+			String[] str4 = str3[0].split("\\|");
+
+			List<String[]> lista = new ArrayList<String[]>();
+			for (int j = 0; j < str4.length; j++) {
+				String[] str5 = str4[j].split("\\:");
+				lista.add(str5);
+			}
+
+			String[] result = new String[lista.size()];
+			for (int k = 0; k < lista.size(); k++) {
+				result[k] = lista.get(k)[1].trim();
+			}
+
+			resultado.add(result);
+		}
+
+		return resultado;
+	}
+
+	public static boolean registrarse(OrquestadorStub orquestador)
+			throws Exception {
+		String nombre_user;
+		int monedero;
+		int prefs;
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println(">Introduzca su nombre");
+		nombre_user = sc.nextLine();
+		System.out.println(">Introduzca el saldo inicial");
+		monedero = Integer.parseInt(sc.nextLine());
+		System.out
+				.println(">Introduzca su moneda de preferencia[0->EUR,1->USD]");
+		prefs = Integer.parseInt(sc.nextLine());
+		boolean result = anadirUser(orquestador, nombre_user, monedero, prefs);
+		sc.close();
+		return result;
+	}
+
+	public static String[] login(OrquestadorStub orquestador) throws Exception {
+		Scanner sc = new Scanner(System.in);
+		System.out.println(">Introduzca su id");
+		int id = Integer.parseInt(sc.nextLine());
+		String[] usersDB = verUsers(orquestador);
+		String[] user = getParametros(id, usersDB);
+		sc.close();
+		return user;
+	}
+}

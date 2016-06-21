@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://ws.apache.org/axis2" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax21="http://sql.java/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ws.apache.org/axis2">
+    <wsdl:documentation>ModificarStockDB</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="unqualified" targetNamespace="http://sql.java/xsd">
+            <xs:complexType name="SQLException">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="SQLState" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="errorCode" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nextException" nillable="true" type="ax21:SQLException"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax22="http://sql.java/xsd" attributeFormDefault="qualified" elementFormDefault="unqualified" targetNamespace="http://ws.apache.org/axis2">
+            <xs:import namespace="http://sql.java/xsd"/>
+            <xs:element name="AnadirElemento">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="marca" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="modelo" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="precio" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="AnadirElementoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ModificarStockDBSQLException">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="SQLException" nillable="true" type="ax21:SQLException"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="BorrarElemento">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="id_elemento" type="xs:int"/>
+                        <xs:element minOccurs="0" name="monedero" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="BorrarElementoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="VerElementos">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="VerElementosResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="VerElementosRequest">
+        <wsdl:part name="parameters" element="ns:VerElementos"/>
+    </wsdl:message>
+    <wsdl:message name="VerElementosResponse">
+        <wsdl:part name="parameters" element="ns:VerElementosResponse"/>
+    </wsdl:message>
+    <wsdl:message name="AnadirElementoRequest">
+        <wsdl:part name="parameters" element="ns:AnadirElemento"/>
+    </wsdl:message>
+    <wsdl:message name="AnadirElementoResponse">
+        <wsdl:part name="parameters" element="ns:AnadirElementoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="BorrarElementoRequest">
+        <wsdl:part name="parameters" element="ns:BorrarElemento"/>
+    </wsdl:message>
+    <wsdl:message name="BorrarElementoResponse">
+        <wsdl:part name="parameters" element="ns:BorrarElementoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ModificarStockDBSQLException">
+        <wsdl:part name="parameters" element="ns:ModificarStockDBSQLException"/>
+    </wsdl:message>
+    <wsdl:portType name="ModificarStockDBPortType">
+        <wsdl:operation name="VerElementos">
+            <wsdl:input message="ns:VerElementosRequest" wsaw:Action="urn:VerElementos"/>
+            <wsdl:output message="ns:VerElementosResponse" wsaw:Action="urn:VerElementosResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="AnadirElemento">
+            <wsdl:input message="ns:AnadirElementoRequest" wsaw:Action="urn:AnadirElemento"/>
+            <wsdl:output message="ns:AnadirElementoResponse" wsaw:Action="urn:AnadirElementoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="BorrarElemento">
+            <wsdl:input message="ns:BorrarElementoRequest" wsaw:Action="urn:BorrarElemento"/>
+            <wsdl:output message="ns:BorrarElementoResponse" wsaw:Action="urn:BorrarElementoResponse"/>
+            <wsdl:fault message="ns:ModificarStockDBSQLException" name="ModificarStockDBSQLException" wsaw:Action="urn:BorrarElementoModificarStockDBSQLException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ModificarStockDBSoap11Binding" type="ns:ModificarStockDBPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="VerElementos">
+            <soap:operation soapAction="urn:VerElementos" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AnadirElemento">
+            <soap:operation soapAction="urn:AnadirElemento" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="BorrarElemento">
+            <soap:operation soapAction="urn:BorrarElemento" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ModificarStockDBSQLException">
+                <soap:fault use="literal" name="ModificarStockDBSQLException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="ModificarStockDBSoap12Binding" type="ns:ModificarStockDBPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="VerElementos">
+            <soap12:operation soapAction="urn:VerElementos" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AnadirElemento">
+            <soap12:operation soapAction="urn:AnadirElemento" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="BorrarElemento">
+            <soap12:operation soapAction="urn:BorrarElemento" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ModificarStockDBSQLException">
+                <soap12:fault use="literal" name="ModificarStockDBSQLException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="ModificarStockDBHttpBinding" type="ns:ModificarStockDBPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="VerElementos">
+            <http:operation location="VerElementos"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AnadirElemento">
+            <http:operation location="AnadirElemento"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="BorrarElemento">
+            <http:operation location="BorrarElemento"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ModificarStockDB">
+        <wsdl:port name="ModificarStockDBHttpSoap11Endpoint" binding="ns:ModificarStockDBSoap11Binding">
+            <soap:address location="http://localhost:8080/axis2/services/ModificarStockDB.ModificarStockDBHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="ModificarStockDBHttpSoap12Endpoint" binding="ns:ModificarStockDBSoap12Binding">
+            <soap12:address location="http://localhost:8080/axis2/services/ModificarStockDB.ModificarStockDBHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="ModificarStockDBHttpEndpoint" binding="ns:ModificarStockDBHttpBinding">
+            <http:address location="http://localhost:8080/axis2/services/ModificarStockDB.ModificarStockDBHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

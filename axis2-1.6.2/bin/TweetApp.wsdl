@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://ws.apache.org/axis2" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax23="http://twitter4j/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ws.apache.org/axis2">
+    <wsdl:documentation>TweetApp</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax24="http://twitter4j/xsd" attributeFormDefault="qualified" elementFormDefault="unqualified" targetNamespace="http://ws.apache.org/axis2">
+            <xs:import namespace="http://twitter4j/xsd"/>
+            <xs:element name="TweetAppTwitterException">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="TwitterException" nillable="true" type="ax23:TwitterException"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="setStatus">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="unqualified" targetNamespace="http://twitter4j/xsd">
+            <xs:complexType name="TwitterException">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accessLevel" type="xs:int"/>
+                    <xs:element minOccurs="0" name="causedByNetworkIssue" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="errorCode" type="xs:int"/>
+                    <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="errorMessageAvailable" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="exceptionCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rateLimitStatus" nillable="true" type="ax23:RateLimitStatus"/>
+                    <xs:element minOccurs="0" name="retryAfter" type="xs:int"/>
+                    <xs:element minOccurs="0" name="statusCode" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="RateLimitStatus">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="limit" type="xs:int"/>
+                    <xs:element minOccurs="0" name="remaining" type="xs:int"/>
+                    <xs:element minOccurs="0" name="resetTimeInSeconds" type="xs:int"/>
+                    <xs:element minOccurs="0" name="secondsUntilReset" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="setStatusRequest">
+        <wsdl:part name="parameters" element="ns:setStatus"/>
+    </wsdl:message>
+    <wsdl:message name="null"/>
+    <wsdl:message name="TweetAppTwitterException">
+        <wsdl:part name="parameters" element="ns:TweetAppTwitterException"/>
+    </wsdl:message>
+    <wsdl:portType name="TweetAppPortType">
+        <wsdl:operation name="setStatus">
+            <wsdl:input message="ns:setStatusRequest" wsaw:Action="urn:setStatus"/>
+            <wsdl:output message="ns:null" wsaw:Action="urn:setStatusResponse"/>
+            <wsdl:fault message="ns:TweetAppTwitterException" name="TweetAppTwitterException" wsaw:Action="urn:setStatusTweetAppTwitterException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="TweetAppSoap11Binding" type="ns:TweetAppPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="setStatus">
+            <soap:operation soapAction="urn:setStatus" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="TweetAppTwitterException">
+                <soap:fault use="literal" name="TweetAppTwitterException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="TweetAppSoap12Binding" type="ns:TweetAppPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="setStatus">
+            <soap12:operation soapAction="urn:setStatus" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="TweetAppTwitterException">
+                <soap12:fault use="literal" name="TweetAppTwitterException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="TweetAppHttpBinding" type="ns:TweetAppPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="setStatus">
+            <http:operation location="setStatus"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="TweetApp">
+        <wsdl:port name="TweetAppHttpSoap11Endpoint" binding="ns:TweetAppSoap11Binding">
+            <soap:address location="http://localhost:8080/axis2/services/TweetApp.TweetAppHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="TweetAppHttpSoap12Endpoint" binding="ns:TweetAppSoap12Binding">
+            <soap12:address location="http://localhost:8080/axis2/services/TweetApp.TweetAppHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="TweetAppHttpEndpoint" binding="ns:TweetAppHttpBinding">
+            <http:address location="http://localhost:8080/axis2/services/TweetApp.TweetAppHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

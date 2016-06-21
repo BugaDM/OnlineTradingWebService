@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="257" key="DIALOG_WIDTH"/>
+		<item value="585" key="DIALOG_Y_ORIGIN"/>
+		<item value="812" key="DIALOG_X_ORIGIN"/>
+		<item value="297" key="DIALOG_HEIGHT"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="" key="selection"/>
+		<list key="findhistory">
+			<item value="org.apache.ws.axis2."/>
+			<item value="logger.debug"/>
+			<item value="sc.close()"/>
+			<item value="scanner."/>
+			<item value="scanner"/>
+			<item value="scan."/>
+			<item value="scan "/>
+			<item value="conexion = DriverManager.getConnection(url, &quot;cliente&quot;, &quot;cliente&quot;);"/>
+		</list>
+		<list key="replacehistory">
+			<item value=""/>
+			<item value="logger.info"/>
+			<item value="sc."/>
+			<item value="sc"/>
+			<item value="conexion = DriverManager.getConnection(url, &quot;Sergio&quot;, &quot;cambiala&quot;);"/>
+			<item value="public static void"/>
+			<item value="public static"/>
+		</list>
+	</section>
+</section>
